@@ -46,8 +46,15 @@ from app import app
 
 export FLASK_APP=myapp.py
 flask run
+```
 
+### SQL Queries
+```
 
-
-
+source .env/bin/activate
+python
+import app.db as db
+db = db.db_handler()
+db.query('select * from user')
+	
 ```
