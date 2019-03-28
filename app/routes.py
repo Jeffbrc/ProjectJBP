@@ -33,6 +33,12 @@ def index():
     ]
     return render_template('index.html', title=TITLE, user=user, posts=posts)
 
+@app.route('/users')
+def users():
+	db = get_db()
+	users = db.query("SELECT first_name,last_name FROM user")
+	return render_template('users.html', users=users)
+
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     error = None

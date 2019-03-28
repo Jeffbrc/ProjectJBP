@@ -85,6 +85,7 @@ rm database.db
 # génère la base en fonction du contenu de schema.sql
 python app/init_db.py
 
+vi app/routes.py
 
 ```
 
