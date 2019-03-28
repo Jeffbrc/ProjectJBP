@@ -58,3 +58,33 @@ db = db.db_handler()
 db.query('select * from user')
 	
 ```
+
+### Générer les hash
+```
+# ouvrir le dossier du projet
+source .env/bin/activate
+
+python
+import app.utils as utils
+utils.hash_sha1('test')
+```
+
+
+# génère la base en fonction du contenu de schema.sql
+python app/init_db.py
+
+
+```
+
+
+### Regénérer la base de données
+```
+# ouvrir le dossier du projet
+rm database.db
+
+# génère la base en fonction du contenu de schema.sql
+python app/init_db.py
+
+
+```
+
