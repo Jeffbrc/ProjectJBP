@@ -1,0 +1,20 @@
+{s "base.html" %}
+
+{% block content %}
+	<div class="container">
+		<h1>list of products</h1>
+      		<br>
+		<table class="table">
+		<thead>
+			<tr><td><strong>id</strong></td><td><strong>brand_id</strong></td><td><strong>material_id</strong></td></tr>
+		</thead>
+		<tbody>
+    		{% for product in products %}
+		<tr>
+			<td>{{ product.id }}</td><td>{{ product.brand_id }}</td><td>{{ product.material_id }}</td>
+		</tr>
+    		{% endfor %}
+		</tbody>
+		</table>
+	</div>
+{% endblock %}

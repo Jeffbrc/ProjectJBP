@@ -30,6 +30,13 @@ def users():
     else:
         return redirect(url_for('login'))
 
+@app.route('/products')
+def users():
+    title="MyApp - List products"
+    db = get_db()
+    products = db.query("SELECT * from product")
+    return render_template('products.html', title=title, products=products)
+
 @app.route('/adduser', methods=['POST', 'GET'])
 def add_user():
     title="MyApp - Add a new user"
