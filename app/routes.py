@@ -30,12 +30,6 @@ def users():
     else:
         return redirect(url_for('login'))
 
-@app.route('/products')
-def users():
-    title="MyApp - List products"
-    db = get_db()
-    products = db.query("SELECT * from product")
-    return render_template('products.html', title=title, products=products)
 
 @app.route('/adduser', methods=['POST', 'GET'])
 def add_user():
@@ -100,3 +94,38 @@ def ex1():
         }
     ]
     return render_template('ex1.html', title=title, user=user, posts=posts)
+
+@app.route('/addshop', methods=['POST', 'GET'])
+def add_shop():
+    title="MyApp - Add a shop"
+    error = None
+    msg = None
+    if session['username']:
+        if request.method=='POST':
+            name = request.form['name']
+            address = request.form['address']
+            city = request.form['city']
+            zipcode = request.form['zipcode']
+            if name is None or address is None or city is None or zipcode is None:
+                error = 'All fields are mandatory.'
+            else:
+                db = get_db()
+                db.add_shop(name, address, city, zipcode)
+                msg = 'Shop was successfully added!'
+        return render_template('addshop.html', title=title, msg=msg, error=error)
+    else:
+        return redirect(url_for('login'))
+
+@app.route('/products')
+def products():
+    title="MyApp - List products"
+    db = get_db()
+    products = db.query("SELECT * from product")
+    return render_template('products.html', title=title, products=products)
+
+@app.route('/shops')
+def shops():
+    title="MyApp - List shops"
+    db = get_db()
+    products = db.query("SELECT * from shop")
+    return render_template('shops.html', title=title, shops=shops)

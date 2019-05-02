@@ -34,7 +34,8 @@ from app import app
 @app.route('/index')
 def index():
     return "Hello, World!"
---
+--python app/init_db.py
+
 
 cd ..
 
@@ -85,7 +86,7 @@ rm database.db
 # génère la base en fonction du contenu de schema.sql
 python app/init_db.py
 
-vi app/routes.py
 
 ```
+### 
 

@@ -100,7 +100,7 @@ CREATE TABLE product_size (
 CREATE TABLE shop (
     id integer NOT NULL CONSTRAINT shop_pk PRIMARY KEY,
     name varchar(64) NOT NULL,
-    adress integer NOT NULL,
+    address integer NOT NULL,
     city integer NOT NULL,
     zipcode integer NOT NULL
 );

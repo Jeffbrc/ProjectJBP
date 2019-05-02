@@ -69,3 +69,9 @@ class db_handler:
             Add a new user
         """
         self.edit('INSERT INTO user (username, passwd_hash, first_name, last_name, email) VALUES (?,?,?,?,?)', (username, passwd_hash, firstname, lastname, email,))
+    
+    def add_shop(self, name, address, city, zipcode):
+        """
+            Add a new shop
+        """
+        self.edit('INSERT INTO shop (name, address, city, zipcode) VALUES (?,?,?,?)', (name, address, city, zipcode,))
