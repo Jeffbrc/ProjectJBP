@@ -127,5 +127,5 @@ def products():
 def shops():
     title="MyApp - List shops"
     db = get_db()
-    products = db.query("SELECT * from shop")
+    shops = db.query("SELECT * from shop")
     return render_template('shops.html', title=title, shops=shops)

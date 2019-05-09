@@ -43,7 +43,7 @@ CREATE TABLE product (
     brand_id integer NOT NULL,
     category_id integer NOT NULL,
     CONSTRAINT product_brand FOREIGN KEY (brand_id)
-    REFERENCES brand (id)
+    REFERENCES brand (id),
 );
 
 -- Table: product_photo

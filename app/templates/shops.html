@@ -2,14 +2,14 @@
 
 {% block content %}
 	<div class="container">
-		<h1>list of products</h1>
+		<h1>List of Shops</h1>
       		<br>
 		<table class="table">
 		<thead>
 			<tr><td><strong>id</strong></td><td><strong>name<strong></td><td><strong>address<strong></td><td><strong>city<strong></td><td><strong>zipcode<strong>/<tr>
 		</thead>
 		<tbody>
-    		{% for shop in shop %}
+    		{% for shop in shops %}
 		<tr>
 				<td>{{ shop.id }}</td><td>{{ shop.name }}</td><td>{{ shop.address }}</td><td>{{ shop.city }}</td><td>{{ shop.zipcode }}<td>
 		</tr>
