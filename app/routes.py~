@@ -120,7 +120,7 @@ def add_shop():
 def products():
     title="MyApp - List products"
     db = get_db()
-    products = db.query("SELECT a.name AS pname, b.name AS bname, c.name AS cname, d.name AS sname from product AS a, brand AS b, category AS c, shop AS d, shop_product e WHERE a.brand_id = b.id AND a.category_id = c.id AND e.product_id = a.id AND d.id=e.shop_id")
+    products = db.query("SELECT a.name AS pname, b.name AS bname, c.name AS cname from product AS a, brand AS b, category AS c WHERE a.brand_id = b.id AND a.category_id = c.id")
     return render_template('products.html', title=title, products=products)
 
 @app.route('/shops')

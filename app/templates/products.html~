@@ -6,12 +6,12 @@
       		<br>
 		<table class="table">
 		<thead>
-			<tr><td><strong>name</strong></td><td><strong>brand</strong></td><td><strong>category</strong></td><td><strong>shop</strong></td></tr>
+			<tr><td><strong>name</strong></td><td><strong>brand</strong></td><td><strong>category</strong></td></tr>
 		</thead>
 		<tbody>
     		{% for product in products %}
 		<tr>
-			<td>{{ product.pname }}</td><td>{{ product.bname }}</td><td>{{ product.cname }}</td><td>{{ product.sname }}</td>
+			<td>{{ product.pname }}</td><td>{{ product.bname }}</td><td>{{ product.cname }}</td>
 		</tr>
     		{% endfor %}
 		</tbody>
